@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: feature-flag-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: feature-flag-service
+  template:
+    metadata:
+      labels:
+        app: feature-flag-service
+    spec:
+      containers:
+      - name: feature-flag-service
+        image: jonlimpw/rum-config:f104bf281021fbab4941e0c8c0e7706d67674de2
+        ports:
+        - containerPort: 3000
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: feature-flag-service
+spec:
+  selector:
+    app: feature-flag-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: ClusterIP
