@@ -1,0 +1,16 @@
+{
+  "name": "simple-node-app",
+  "version": "1.0.0",
+  "description": "RUM Dynamic Sampling",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dd-trace": "^5.31.0",
+    "express": "^4.17.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
