@@ -13,3 +13,6 @@
 - [x] Test using synthetics private worker on output
 
 ![image](https://github.com/user-attachments/assets/89520e84-14fc-4cbd-9f10-9dfa1b619b75)
+
+- [] Expose app to public via ingress
+- [] Test on a RUM app with async function
