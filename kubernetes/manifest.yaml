@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: feature-flag-service
-        image: jonlimpw/rum-config:f104bf281021fbab4941e0c8c0e7706d67674de2
+        image: jonlimpw/rum-config:a415d3cb416137b5898dc78a4eefb1316bc6c51b
         ports:
         - containerPort: 3000
 --- 

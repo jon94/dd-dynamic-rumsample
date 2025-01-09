@@ -16,3 +16,29 @@
 
 - [] Expose app to public via ingress
 - [] Test on a RUM app with async function
+```
+async function fetchSampleRate() {
+  const response = await fetch('http://feature-flag-service.default.svc.cluster.local/feature-flag?feature=rum-sample-rate-configuration');
+  const data = await response.json();
+  return data.sampleRate;
+}
+
+(async () => {
+  const RUM_sample_rate = await fetchSampleRate();
+
+  datadogRum.init({
+    applicationId: '<DATADOG_APPLICATION_ID>',
+    clientToken: '<DATADOG_CLIENT_TOKEN>',
+    site: '<DATADOG_SITE>',
+    service: 'my-web-application',
+    env: 'production',
+    version: '1.0.0',
+    sessionSampleRate: RUM_sample_rate,
+    sessionReplaySampleRate: 100,
+    trackResources: true,
+    trackLongTasks: true,
+    trackUserInteractions: true,
+  });
+})();
+
+```
