@@ -3,8 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - "feature-flag.json" # Ignore changes to this file
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - "feature-flag.json" # Ignore changes to this file
 
 jobs:     
   build_test_push:
