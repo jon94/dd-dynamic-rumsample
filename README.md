@@ -1,5 +1,6 @@
 # dd-dynamic-rumsample
 
+- A simpler idea is to just host the config file and download it. The config file is hosted here as `feature-flag.json`
 - The idea here is to create a function that is able to serve the RUM sample config value so that it can be changed dynamically via a feature flag concept.
 - The function can be hosted in an infrastructure like k8s or even lambdas so the front end app will be able to interact with it.
 - Known trade off - this will cause RUM to potentially miss some events (due to start up order + init delay time)
